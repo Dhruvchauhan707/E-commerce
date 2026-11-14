@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
@@ -12,7 +13,7 @@ const dashboardRoutes = require('./routes/dashboardRoutes');
 const imagesearchRouter = require('./routes/imagesearchRoutes');
 
 const app = express();
-const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173,https://myshop-mernapp.netlify.app')
+const allowedOrigins = (process.env.CLIENT_URL)
   .split(',').map((origin) => origin.trim()).filter(Boolean);
 
 app.disable('x-powered-by');
